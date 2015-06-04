@@ -21,3 +21,9 @@ It also makes use of a few python modules :
 
 ##Usage
 As of now, it is still a commandline launched application. Go to the root directory of the project, and just type `python launch.py` That will launch the script and give you a GUI to supply the arguments.
+![Image of The Gooey GUI](images/VersionningGui.jpg)
+
+The first two arguments are mandatory. 
+ProjectName should be the name you want your projects main folder to have. Inside of said folder will be your different versions of the project.
+
+User should be the name you will (always) use with this script. This is what will be used to know who you are and wh
