@@ -1,6 +1,6 @@
 # SmallVersionningPythonScript
 ## Table of contents
-  1 - [Description](description)
+  1 - <a href="description">Description</a>
   
   2 - [Requirements](requirements)
   
