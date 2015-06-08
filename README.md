@@ -1,5 +1,4 @@
 # SmallVersionningPythonScript
-(optional)
 ## Description
 A small utility script that allows basic project versionning functionnalities (I.e : Copy to and from source/dest folders, "versionning" of revisions, "archiving"... Etc.
 
