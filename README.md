@@ -1,12 +1,12 @@
 # SmallVersionningPythonScript
 ## Table of contents
-  1 - <a href="description">Description</a>
+  1 - [Description](#description)
   
-  2 - [Requirements](requirements)
+  2 - [Requirements](#requirements)
   
-  3 - [Usage](usage)
+  3 - [Usage](#usage)
   
-  4 - [Contact](contact)
+  4 - [Contact](#contact)
   
 ## Description
 A small utility script that allows basic project versionning functionnalities (I.e : Copy to and from source/dest folders, "versionning" of revisions, "archiving"... Etc.
