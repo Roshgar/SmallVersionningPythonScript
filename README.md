@@ -1,4 +1,13 @@
 # SmallVersionningPythonScript
+## Table of contents
+  1 - [Description](https://github.com/Roshgar/SmallVersionningPythonScript#description)
+  
+  2 - [Requirements](https://github.com/Roshgar/SmallVersionningPythonScript#requirements)
+  
+  3 - [Usage](https://github.com/Roshgar/SmallVersionningPythonScript#usage)
+  
+  4 - [Contact](https://github.com/Roshgar/SmallVersionningPythonScript#contact)
+  
 ## Description
 A small utility script that allows basic project versionning functionnalities (I.e : Copy to and from source/dest folders, "versionning" of revisions, "archiving"... Etc.
 
