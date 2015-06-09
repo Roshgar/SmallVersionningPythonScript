@@ -17,7 +17,7 @@ This program uses python 2.7 64 bit for windows. To download and install, either
 The next step is to take care of the graphical library. Click [here](http://downloads.sourceforge.net/wxpython/wxPython3.0-win64-3.0.2.0-py27.exe), download, follow the instructions.
 
 Once that is done, you normally have finished the most manual part of the work. Downhill from here.
-Download the .zip of this project, extract it wherever you want, and navigate to it with your console (Didn't close it yet did you?)
+Download the .zip of this project, extract it wherever you want, and navigate to it with your console (cmd and powershell will be on all Windows systems.)
 Once there, go into InstallUtils, and simply type `python install.py`. You may now go take a 5 minute break. Once you come back, everything should be installed. Then, all that is left to do is type `python launch.py` and follow the usage.
 
 It also makes use of a few python modules :
