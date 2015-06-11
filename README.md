@@ -1,10 +1,25 @@
 # SmallVersionningPythonScript
-(optional)
+## Table of contents
+  1 - [Description](#description)
+  
+  2 - [Requirements](#requirements)
+  
+  3 - [Usage](#usage)
+  
+  4 - [Contact](#contact)
+  
 ## Description
 A small utility script that allows basic project versionning functionnalities (I.e : Copy to and from source/dest folders, "versionning" of revisions, "archiving"... Etc.
 
 ## Requirements
-This program uses python 2.7 64 bit for windows. 
+This program uses python 2.7 64 bit for windows. To download and install, either click [here](https://www.python.org/downloads/release/python-279/ ), navigate down the page and click on `Windows x86-64 MSI Installer` or click on [this link](https://www.python.org/ftp/python/2.7.9/python-2.7.9.amd64.msi). Once it is downloaded, launch it and wait for the installation to complete.
+
+The next step is to take care of the graphical library. Click [here](http://downloads.sourceforge.net/wxpython/wxPython3.0-win64-3.0.2.0-py27.exe), download, follow the instructions.
+
+Once that is done, you normally have finished the most manual part of the work. Downhill from here.
+Download the .zip of this project, extract it wherever you want, and navigate to it with your console (cmd and powershell will be on all Windows systems.)
+Once there, go into InstallUtils, and simply type `python install.py`. You may now go take a 5 minute break. Once you come back, everything should be installed. Then, all that is left to do is type `python launch.py` and follow the usage.
+
 It also makes use of a few python modules :
   - WXPython 
       - http://sourceforge.net/projects/wxpython/files/wxPython/3.0.2.0/wxPython3.0-win64-3.0.2.0-py27.exe/download?use_mirror=iweb
@@ -20,7 +35,7 @@ It also makes use of a few python modules :
 
 
 ##Usage
-As of now, it is still a commandline launched application. Go to the root directory of the project, and just type `python launch.py` That will launch the script and give you a GUI to supply the arguments.
+Double click the executable. You're good to go!
 ![Image of The Gooey GUI](images/VersionningGui.jpg)
 
 
@@ -47,3 +62,6 @@ Store is used to select a folder to be used as a destination when retrieving the
 Archive is to specify a folder that will be used as an "Archive". The default is the variable `archivePath`, defined in `srcs/utils.py l.9`
 #####Lock
 This option is used to "Lock" the project. This will prevent other users from modifying the source of the project you have previously checked out. Once you push the files back in, (if you did not specify this option again) the project becomes unlocked and everybody has access again. (You may still retrieve the files if the project was locked by another user. However, all pushing of the files will be forbidden. So just wait until the person pushes everything, and then only retrieve what you want.)
+
+##Contact
+If any issues/bugs/questions/other arise, please feel free to either create an issue on this page, or contact me at `calapitook@gmail.com`
