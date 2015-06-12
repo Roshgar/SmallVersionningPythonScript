@@ -30,6 +30,8 @@ Once that is done, you normally have finished the most manual part of the work. 
 Download the .zip of this project, extract it wherever you want, and navigate to it with your console (cmd and powershell will be on all Windows systems.)
 Once there, go into InstallUtils, and simply type `python install.py`. You may now go take a 5 minute break. Once you come back, everything should be installed. Then, all that is left to do is type `python launch.py` and follow the usage.
 
+You can also manually install this with the information below. (But why?)
+
 It makes use of the following python modules :
   - WXPython 
       - http://sourceforge.net/projects/wxpython/files/wxPython/3.0.2.0/wxPython3.0-win64-3.0.2.0-py27.exe/download?use_mirror=iweb
@@ -42,8 +44,9 @@ It makes use of the following python modules :
   - Shutil (Should be included with a default version of python)
   - argparse
       - `pip install argparse`
+
 ####Side Note
-If there is an issue with the last step (When you launch it spits out a traceback about multiDirChooser not being present), wait one or two days. A merge is pending on one of the libraries I use.
+If there is an issue when you launch it (I.e It spits out a traceback about multiDirChooser not being present), wait one or two days. A merge is pending on one of the libraries I use, i can add another script for the install but by 06/12/15 evening it should be merged.
 
 ##Usage
 Open a terminal (cmd, powershell, cmder... Whatever you have on your system and/or prefer), navigate to wherever you placed the files of this, and simply type `python launch.py`.
