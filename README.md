@@ -9,7 +9,7 @@
   4 - [Contact](#contact)
   
 ## Description
-A small utility script that allows basic project versionning functionnalities (I.e : Copy to and from source/dest folders, "versionning" of revisions, "archiving"... Etc.
+A small utility script that allows basic project versionning functionnalities (I.e : Copy to and from source/dest folders, "versionning" of revisions, "archiving"... Etc.)
 
 ## Requirements
 #### Python 2.7
