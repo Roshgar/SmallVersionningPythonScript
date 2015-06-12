@@ -42,7 +42,8 @@ It makes use of the following python modules :
   - Shutil (Should be included with a default version of python)
   - argparse
       - `pip install argparse`
-
+####Side Note
+If there is an issue with the last step (When you launch it spits out a traceback about multiDirChooser not being present), wait one or two days. A merge is pending on one of the libraries I use.
 
 ##Usage
 Open a terminal (cmd, powershell, cmder... Whatever you have on your system and/or prefer), navigate to wherever you placed the files of this, and simply type `python launch.py`.
