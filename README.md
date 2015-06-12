@@ -12,15 +12,25 @@
 A small utility script that allows basic project versionning functionnalities (I.e : Copy to and from source/dest folders, "versionning" of revisions, "archiving"... Etc.
 
 ## Requirements
-This program uses python 2.7 64 bit for windows. To download and install, either click [here](https://www.python.org/downloads/release/python-279/ ), navigate down the page and click on `Windows x86-64 MSI Installer` or click on [this link](https://www.python.org/ftp/python/2.7.9/python-2.7.9.amd64.msi). Once it is downloaded, launch it and wait for the installation to complete.
+#### Python 2.7
+This program uses python 2.7 64 bit for windows. To download and install, either click [here](https://www.python.org/downloads/release/python-279/ ), navigate down the page and click on `Windows x86-64 MSI Installer`, **or** click on [this link](https://www.python.org/ftp/python/2.7.9/python-2.7.9.amd64.msi). Once it is downloaded, launch it and wait for the installation to complete.
+##### To avoid some issues :
+It should by default install to `C:\Python27`. You will also be able to specify this during the install process. If you chose a different path, remember where this install went, note it down. From now on i will refer to where python was installed as PYTHONPATH
 
+After being able to choose a directory to install python, you will see a display with `Customize Python` written at the top. Scroll down the menu until you see `Add python.exe to Path`. Click on the menu to its left, select `will be installed on local hard drive`. This will remove a few complications that could arise afterwards.
+
+#### WxPython (Graphical library)
 The next step is to take care of the graphical library. Click [here](http://downloads.sourceforge.net/wxpython/wxPython3.0-win64-3.0.2.0-py27.exe), download, follow the instructions.
 
+If an issue arises at this step (I.e : No installation of python2.7 found in the registry), you did not  just do `ok > I Accept > Next`
+You will then be shown a window with an input. Said input should look like `C:\put a directory on the PYHTONPATH here\Lib\site-packages`. Simply change it to your PYTHONPATH from earlier. On a default python installation, you should thus have `C:\Python27\Lib\site-packages`.
+
+#### Setting up the modules
 Once that is done, you normally have finished the most manual part of the work. Downhill from here.
 Download the .zip of this project, extract it wherever you want, and navigate to it with your console (cmd and powershell will be on all Windows systems.)
 Once there, go into InstallUtils, and simply type `python install.py`. You may now go take a 5 minute break. Once you come back, everything should be installed. Then, all that is left to do is type `python launch.py` and follow the usage.
 
-It also makes use of a few python modules :
+It makes use of the following python modules :
   - WXPython 
       - http://sourceforge.net/projects/wxpython/files/wxPython/3.0.2.0/wxPython3.0-win64-3.0.2.0-py27.exe/download?use_mirror=iweb
   - Gooey (Beta)
@@ -35,7 +45,13 @@ It also makes use of a few python modules :
 
 
 ##Usage
-Double click the executable. You're good to go!
+Open a terminal (cmd, powershell, cmder... Whatever you have on your system and/or prefer), navigate to wherever you placed the files of this, and simply type `python launch.py`.
+
+Another solution is available that takes away the hassle of the command line if you are on a windows system. Simply right-click on any file with the `.py` extension then, `Open With` > `Choose default program` > `Python`
+
+Once that is done, you can double click the `launch.py` file, and it will start the script. This thus allows you to make a shortcut out of it, and place it on the desktop. (Or wherever the H*** you want)
+
+A window looking quite like this one should show. If not, there was an issue with one of the previous steps. Write down the error and add it in the issue section of this project, or else send me an [e-mail](#contact)
 ![Image of The Gooey GUI](images/VersionningGui.jpg)
 
 
