@@ -81,7 +81,7 @@ Store is used to select a folder to be used as a destination when retrieving the
 #####Archive
 Archive is to specify a folder that will be used as an "Archive". The default is the variable `archivePath`, defined in `srcs/utils.py l.9`
 #####Lock
-This option is used to "Lock" the project. This will prevent other users from modifying the source of the project you have previously checked out. Once you push the files back in, (if you did not specify this option again) the project becomes unlocked and everybody has access again. (You may still retrieve the files if the project was locked by another user. However, all pushing of the files will be forbidden. So just wait until the person pushes everything, and then only retrieve what you want.)
+This option is used to "Lock" the project. This will prevent other users from modifying the source of the project you are going to check out. Once you push the files back in, (if you did not specify this option again) the project becomes unlocked and everybody has access again. (You may still retrieve the files if the project was locked by another user. However, all pushing of the files will be forbidden. So just wait until the person pushes everything, and then only retrieve what you want.)
 
 ##Contact
 If any issues/bugs/questions/other arise, please feel free to either create an issue on this page, or contact me at `calapitook@gmail.com`
