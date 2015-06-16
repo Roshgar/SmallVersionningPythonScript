@@ -14,15 +14,17 @@ A small utility script that allows basic project versionning functionnalities (I
 ## Requirements
 #### Python 2.7
 This program uses python 2.7 64 bit for windows. To download and install, either click [here](https://www.python.org/downloads/release/python-279/ ), navigate down the page and click on `Windows x86-64 MSI Installer`, **or** click on [this link](https://www.python.org/ftp/python/2.7.9/python-2.7.9.amd64.msi). Once it is downloaded, launch it and wait for the installation to complete.
-##### To avoid some issues :
-It should by default install to `C:\Python27`. You will also be able to specify this during the install process. If you chose a different path, remember where this install went, note it down. From now on i will refer to where python was installed as PYTHONPATH
 
-After being able to choose a directory to install python, you will see a display with `Customize Python` written at the top. Scroll down the menu until you see `Add python.exe to Path`. Click on the menu to its left, select `will be installed on local hard drive`. This will remove a few complications that could arise afterwards.
+##### Please read this before installing python
+After being able to choose a directory to install python, you will see a display with `Customize Python` written at the top. Scroll down the menu until you see `Add python.exe to Path`. Click on the menu to its left, select `will be installed on local hard drive`. This will remove a few complications that would otherwise arise afterwards.
+
+##### Installation Path
+It should by default install to `C:\Python27`. You will be able to specify this during the install process. If you chose a different path, remember where this install went, note it down. From now on i will refer to where python was installed as PYTHONPATH
 
 #### WxPython (Graphical library)
 The next step is to take care of the graphical library. Click [here](http://downloads.sourceforge.net/wxpython/wxPython3.0-win64-3.0.2.0-py27.exe), download, follow the instructions.
 
-If an issue arises at this step (I.e : No installation of python2.7 found in the registry), you did not  just do `ok > I Accept > Next`
+If an issue arises at this step (I.e : No installation of python2.7 found in the registry), you did not take care of specifying `add python.exe to Path` when installing python. Just do `ok > I Accept > Next`
 You will then be shown a window with an input. Said input should look like `C:\put a directory on the PYHTONPATH here\Lib\site-packages`. Simply change it to your PYTHONPATH from earlier. On a default python installation, you should thus have `C:\Python27\Lib\site-packages`.
 
 #### Setting up the modules
