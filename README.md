@@ -22,7 +22,7 @@ After being able to choose a directory to install python, you will see a display
 It should by default install to `C:\Python27`. You will be able to specify this during the install process. If you chose a different path, remember where this install went, note it down. From now on i will refer to where python was installed as PYTHONPATH
 
 #### WxPython (Graphical library)
-The next step is to take care of the graphical library. Click [here](http://downloads.sourceforge.net/wxpython/wxPython3.0-win64-3.0.2.0-py27.exe), download, follow the instructions.
+The next step is to take care of the graphical library. Click [here](http://downloads.sourceforge.net/wxpython/wxPython3.0-win64-3.0.2.0-py27.exe), (Do not click on any button on the page you will be redirected to, it will download after 5 seconds), let it download, launch it, follow the instructions.
 
 If an issue arises at this step (I.e : No installation of python2.7 found in the registry), you did not take care of specifying `add python.exe to Path` when installing python. Just do `ok > I Accept > Next`
 You will then be shown a window with an input. Said input should look like `C:\put a directory on the PYHTONPATH here\Lib\site-packages`. Simply change it to your PYTHONPATH from earlier. On a default python installation, you should thus have `C:\Python27\Lib\site-packages`.
