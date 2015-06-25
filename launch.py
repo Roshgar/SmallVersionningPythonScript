@@ -90,11 +90,12 @@ def initOptParser():
 	# Function to call to get all arguments.
 	
 	args = parser.parse_args()
-	
+	print(args.files)
+	print(args.directories)
 	if (args.files == None and args.directories == None):
 		return (None)
 	if (args.files and args.directories):
-		args.files = args.files[0].split(";")  + args.directories[0].split(";")
+		args.files = args.files + args.directories#args.files[0].split(";")  + args.directories[0].split(";")
 	elif (args.directories):
 		args.files = args.directories
 	return (args)
