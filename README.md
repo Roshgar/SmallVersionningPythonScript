@@ -47,9 +47,6 @@ It makes use of the following python modules :
   - argparse
       - `pip install argparse`
 
-####Side Note
-If there is an issue when you launch it (I.e It spits out a traceback about multiDirChooser not being present), wait one or two days. A merge is pending on one of the libraries I use, i can add another script for the install but by 06/12/15 evening it should be merged.
-
 ##Usage
 Open a terminal (cmd, powershell, cmder... Whatever you have on your system and/or prefer), navigate to wherever you placed the files of this, and simply type `python launch.py`.
 
