@@ -90,19 +90,22 @@ def initOptParser():
 	# Function to call to get all arguments.
 	
 	args = parser.parse_args()
-	print(args.files)
-	print(args.directories)
+	#print(args.files)
+	#print(args.directories)
 	if (args.files == None and args.directories == None):
 		return (None)
 	if (args.files and args.directories):
 		args.files = args.files + args.directories#args.files[0].split(";")  + args.directories[0].split(";")
 	elif (args.directories):
 		args.files = args.directories
+	print("The following files/directories will be copied (along with all sub-directories) :")
+	for myFile in args.files:
+		print("- [" + myFile + "]")
 	return (args)
 
 def start():
 	args = initOptParser()
-	print(args.files)
+	#print(args.files)
 	if (args.files == None):
 		print("Not copying anything does not seem to warrant the use of this script. Ignoring and closing.")
 		return (0)
