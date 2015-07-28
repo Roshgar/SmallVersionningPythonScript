@@ -80,9 +80,12 @@ def initOptParser():
 	parser.add_argument('-s', '--store', metavar="destPath", help='Use to specify where you want the files retrieved from the project to be copied.')
 	# Function to call to get all arguments.
 	args = parser.parse_args()
-	print(args.files)
-	print(args.user)
-	print(args.projectName)
-	printOptions(args)
-	args.method()
+	#print(args.files)
+	#print(args.user)
+	#print(args.projectName)
+	#printOptions(args)
+	#args.method()
+	print("The following files/directories will be copied (along with all sub-directories) :")
+	for myFile in files:
+		print("- [" + myFile + "]")
 	return (args)

@@ -12,17 +12,21 @@ Starts out checking the lock, then behaviour changes depending on that. If it is
 def push(args, currPath):
 	if (os.path.exists(os.path.join(currPath, args.projectName))):
 		ret, user = utils.lockCheck(os.path.join(currPath, args.projectName), args.user)
+		#print ("[" + user + "]")
 		if (ret and user != args.user):
+			print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
 			print ("It is, at the moment, impossible to commit the files. This project is currently locked by user : " + user)
+			print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
+			raise Exception("Locked by user.", "user [" + user + "] locked the project. It is currently impossible to commit via this script.")
 			return (False)
 		elif (user == args.user and not args.lock):
-			utils.setLock(user, False)
+			utils.setLock(os.path.join(currPath, args.projectName), user, False)
 	commitObjs = initFolders(args.projectName, args, currPath)
 	versNb, versNames = utils.countVersions(os.path.join(currPath, args.projectName))
 	if (versNb > 5):
 		print (os.path.join(currPath, args.projectName) + " : more than 5 versions. Must be archived.")
 		#print (versNames)
-		archiving.archiving(args, args.projectName, versNames, commitObjs)
+		archiving.archiving(args, args.projectName, versNames, commitObjs, currPath)
 	print("Pushing files!")
 
 '''
@@ -37,7 +41,7 @@ def updateHeader(header, args):
 	header.versions += 1
 	header.commits += 1	
 	return (header)
-
+ 
 '''
 Adds the commitObj to the list of all and also check that the size is not superior to 
 MAX_COMMITLOG_SIZE. If it is, removes the oldest entry 
@@ -53,12 +57,12 @@ def addCommitObj(commitObjs, args, currentVers, projectName):
 Prepares all files for copying and then copies.
 '''
 
-def updateVersFile(path, args, projectName):
+def updateVersFile(path, args, projectName, version):
 	header, commitObjs = utils.getHeaderAndCommit(path + 'versFile')
 	updateHeader(header, args)
 	# Adds the current commit information
-	commitObjs = addCommitObj(commitObjs, args, header.currentVers, projectName)
-	version = header.currentVers
+	commitObjs = addCommitObj(commitObjs, args, version, projectName)
+	#version = header.currentVers
 	versFile = open(path+'versFile', 'w')
 	versFile.write(header.serialize())
 	for commit in commitObjs:
@@ -68,6 +72,7 @@ def updateVersFile(path, args, projectName):
 
 def initFolders(projectName, args, currPath):
 	path = currPath + projectName + "/"
+	cnt = 1
 	# This if is for the case where the project has not be initialised. (No folder in root with : [projectName])
 	if not os.path.exists(path):
 		# Create directory with projectName inside of the "root" directory
@@ -80,11 +85,23 @@ def initFolders(projectName, args, currPath):
 		lockFile.close()
 	else:
 		# Parse information from versFile. (Header + all commits stored)
-		commitObjs, version = updateVersFile(path, args, projectName)
-
+		
+		
+		header, commitObjs = utils.getHeaderAndCommit(path+"/versFile")
+		version = utils.getVersionName(args, header)
+		tmpVers = version
+		#print("CURRENT VERS IS : " + version)
 		if not (os.path.exists(path + version)):
 			os.makedirs(path+version)
-		
+		else:
+			tmpVers = version
+			while (os.path.exists(path + tmpVers)):
+				tmpVers = version + "-" + str(cnt)
+				cnt += 1
+			version = tmpVers
+			os.makedirs(path+version)
+		commitObjs, version = updateVersFile(path, args, projectName, version)
+		version = tmpVers
 	# Copies all files (And directories) specified by the user in the command line
 	utils.copyAll(path+version, args.files)
 	return (commitObjs)

@@ -23,8 +23,8 @@ def get(args, currPath):
 		shutil.copytree(path, os.path.join(destPath, tmpName))
 		if (args.lock):
 			print("went to utils.setlock")
-			utils.setLock(os.path.join(currPath, args.projectName), user, True)
-	print("Last three prints :")
-	print (args.store)
-	print (ret)
-	print (user)	
+			utils.setLock(os.path.join(currPath, args.projectName), args.user, True)
+	#print("Last three prints :")
+	#print (args.store)
+	#print (ret)
+	#print (user)	

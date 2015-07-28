@@ -108,9 +108,7 @@ a version. This allows to get the actual name of the version being pushed.
 '''
 
 def getVersionName(args, header):
-	if (args.overwrite):
-		return (header.currentVers)
-	elif (args.version):
+	if (args.version):
 		return (args.version)
 	else:
 		return ("VERSION_" + str(header.defaultVersions + 1))
@@ -170,14 +168,16 @@ def setUpFiles(projectName, args, currPath):
 	return (version)
 
 def setLock(path, user, lock):
-	print(path)
+	#print(path)
 	lockFile = open(path + '/.lockFile', 'w+')
-	print(lockFile)
+	#print("lockFile = " + str(lockFile))
+	#print("User = [" + user + "]")
+	#print(lockFile)
 	if (lock):
-		print("Wrote to file.")
+		#print("Wrote to file.")
 		ret = lockFile.write("locked:" + user)
 		#lockFile.write("IM A HIPPO!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
-		print(ret)
+		#print(ret)
 	else:
 		lockFile.write("unlocked:" + user)
 		lockFile.write("NOOOOO")
@@ -206,6 +206,7 @@ def lockCheck(path, user):
 	lockFile.close()
 	info = line.split(':')
 	locked, lockUser = info[0], info[1]
+	#print("Locked = " + locked)
 	if (locked == "locked"):
 		if (user == lockUser):
 			#print ("In user == lockUser with user : " + user + " and lockUser : " + lockUser)

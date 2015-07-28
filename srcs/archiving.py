@@ -9,8 +9,19 @@ Checks the archives to know if the version already exists in the project. If so 
 '''
 def checkArchives(projectName, versName, projectPath, archPath):
 	path = archPath + "/" + projectName + "/"
+	cnt = 1
 	nbVers, versNames = utils.countVersions(utils.archivePath + "/" + projectName)
+	keepVers = versName
 	if versName in versNames:
+		print("There seems to be a problem. A directory named [" + versName + "] is already present in the Archive Folder.\nIt will be renamed by appending -X to the name, whth X being a number that does not conflict with other names present in the directory.")
+		tmpVers = versName
+		while (tmpVers in versNames):
+			tmpVers = versName + "-" + str(cnt)
+			cnt += 1
+			versName = tmpVers
+		#os.makedirs(path+versName)
+		shutil.move(projectPath + keepVers, path + versName)
+		'''
 		choice = input("A directory with the name " + versName + " already exists in the archives for project : " + projectName + ".\nEither a manual copy was made, or a version name was specified (with --version) with a name like the default : VERSION_X\nChoose what to do : 1 - Overwrite or 2 - Rename or 3 - Ignore. [1\2\3] : ")
 		if choice == 1:
 			shutil.rmtree(path + versName)
@@ -28,9 +39,10 @@ def checkArchives(projectName, versName, projectPath, archPath):
 		else:
 			print ("Ignored for this time. The question will be asked each time.\nYou can modify the number of accepted versions by editing the file [fileRelocation.py] with the variable MAX_VERS_NUMBERS.")
 			return (0)
+		'''
 
 	else:
-		shutil.move(projectPath + versName, path + versName)
+		shutil.move(projectPath + keepVers, path + versName)
 			# Ignore. Not sure I'm keeping this option.
 
 		# Diplay prompt for user and make him choose his method.
@@ -56,11 +68,11 @@ def archiving(args, projectName, versNames, commitObjs, currPath):
 		if (tmp in tmpVers and removed < 5):
 			tmpVers.remove(tmp)
 			removed += 1
-	print ("The intruder(s) is : " + str(tmpVers))
+	print ("The archived folder(s) is/are : " + str(tmpVers))
 	projectPath = currPath + projectName + "/" # will be changed. Need a more generic way for this. (Accepting a user defined directory as root folder.)
 	if (len(tmpVers) >= 1):
 		if not (os.path.exists(archivePath + projectName)):
 			os.makedirs(archivePath + projectName)
 		for moveVers in tmpVers:
 			checkArchives(projectName, moveVers, projectPath, archivePath)
-		print("Archiiiiiive")
+		print("Archive completed")
